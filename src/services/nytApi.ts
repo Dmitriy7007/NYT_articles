@@ -1,10 +1,12 @@
 import type { PostResponse } from '@/types/post'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+const baseUrl = import.meta.env.VITE_NYT_API_URL
+
 export const nytApi = createApi({
   reducerPath: 'nytApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: '/api',
+    baseUrl: baseUrl,
   }),
   endpoints: builder => ({
     getPosts: builder.query<PostResponse, { year: number; month: number }>({
