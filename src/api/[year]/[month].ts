@@ -12,9 +12,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const response = await fetch(
       `https://api.nytimes.com/svc/archive/v1/${year}/${month}.json?api-key=${apiKey}`
     )
+    if (!response.ok) {
+      throw new Error(`NYT API error: ${response.status}`)
+    }
     const data = await response.json()
     res.status(200).json(data)
-  } catch {
+  } catch (err) {
+    console.error(err)
     res.status(500).json({ error: 'Failed to fetch NYT data' })
   }
 }
