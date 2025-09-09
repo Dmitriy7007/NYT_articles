@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { year, month } = req.query
-  const apiKey = process.env.VITE_NYT_API_KEY
+  const apiKey = process.env.NYT_API_KEY
 
   if (!year || !month || !apiKey) {
     return res.status(400).json({ error: 'Missing parameters or API key' })
