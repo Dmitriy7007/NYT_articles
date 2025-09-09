@@ -6,7 +6,7 @@ const isDev = import.meta.env.DEV
 export const nytApi = createApi({
   reducerPath: 'nytApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: '/api',
+    baseUrl: '/.netlify/functions/nyt',
   }),
   endpoints: builder => ({
     getPosts: builder.query<PostResponse, { year: number; month: number }>({
@@ -19,7 +19,7 @@ export const nytApi = createApi({
             },
           }
         } else {
-          return `/${year}/${month}.json`
+          return `?year=${year}&month=${month}`
         }
       },
     }),
