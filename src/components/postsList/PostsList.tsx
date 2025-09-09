@@ -3,7 +3,7 @@ import { PostCard } from '../postCard/PostCard'
 import { groupByDate } from '@/lib/groupByDate'
 import { Separator } from '@radix-ui/react-separator'
 import { useEffect, useRef, useState } from 'react'
-import { Loader } from '../loader/loader'
+import { Loader } from '../loader/Loader'
 
 export function PostsList() {
   const { data, error, isLoading } = useGetPostsQuery(
