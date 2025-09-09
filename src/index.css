@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  font-family: Lato, system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #000;
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --black: #000;
+  --grey: #8d8d94;
+  --grey-darken: #6d787a;
+  --white: #fff;
+  --grey-light: #ededed;
+  --blue-primary: #096ffa;
+  --grey-surface: #f8f9f9;
+  --yellow-sunny: #ffe600;
+  --blue-secondary: #5b9df6;
+}
+
+@theme inline {
+  --color-blue-primary: var(--blue-primary);
+  --color-grey-darken: var(--grey-darken);
+  --color-black: var(--black);
+  --color-grey: var(--grey);
+  --color-white: var(--white);
+  --color-grey-light: var(--grey-light);
+}
+
+button > svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 1px;
+  color: var(--black);
+}
+button {
+  opacity: 1;
+}
